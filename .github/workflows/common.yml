@@ -44,7 +44,7 @@ jobs:
   image:
     # Nested jobs inherit permissions from parent job, so if we need to publish an image,
     # the caller must set permissions that include packages: write.
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, macos, sequoia, ARM64]
     needs: [build] # don't build the image if the repo doesn't build
     steps:
       - name: Login to GitHub container registry
